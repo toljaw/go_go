@@ -119,3 +119,5 @@ func cashier(price float32) (bool, float32) {
 
 	return drinkPaid, cashOut
 }
+
+// TODO 5 - refund if not enough money for drink
