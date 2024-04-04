@@ -1,0 +1,93 @@
+/*
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 300 to 700
+*/
+.quicksand-400 {
+                font-family: "Quicksand", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+            }
+.textmarker {
+    color: #9E2A2B;
+}
+body {
+    font-family: "Quicksand", sans-serif;
+    color: #335C67;
+}
+h1 {
+    font-size: 50px;
+    color: #335C67;
+}
+p {
+    font-size: 30px;
+}
+h2 {
+    font-weight: bold;
+}
+.container {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    flex-direction: column;
+    gap: 50px
+}
+.line {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+.header_tile {
+    width: 100%;
+    text-align: center;
+}
+.tile {
+    width: 30%;
+    height: 150px;
+    text-align: center;
+    border-radius: 10px;
+}
+#td1 {
+    background-color: #335C67;
+    color: #9E2A2B;
+}
+#td2 {
+    background-color: #FFF3B0;
+    color: #540B0E;
+}
+#td3 {
+    background-color: #E09F3E;
+    color: #540B0E;
+}
+#td4 {
+    background-color: #540B0E;
+    color: #9E2A2B;
+}
+#td5 {
+    background-color: #9E2A2B;
+    color: #540B0E;
+}
+#td6 {
+    background-color: #9E2A2B;
+    color: #E09F3E;
+}
+
+@media (max-width: 700px) {
+    .line {
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .tile {
+        width: 80%;
+    }
+    }
+/*
+Farbpalette
+grün        #335C67
+hell gelb   #FFF3B0
+orange      #E09F3E
+hell rot    #9E2A2B
+rot         #540B0E
+*/
