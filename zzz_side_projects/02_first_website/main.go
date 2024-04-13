@@ -14,10 +14,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html")
 }
 
-//func About(w http.ResponseWriter, r *http.Request) {
-//	renderTemplate(w, "about.page.html")
-//}
-
 func renderTemplate(w http.ResponseWriter, tmpl string) {
 	parsedTemplate, _ := template.ParseFiles("./public/" + tmpl)
 	err := parsedTemplate.Execute(w, nil)
@@ -30,7 +26,6 @@ func renderTemplate(w http.ResponseWriter, tmpl string) {
 // main ist the main application function
 func main() {
 	http.HandleFunc("/", Home)
-	//http.HandleFunc("/about", About)
 
 	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
 	_ = http.ListenAndServe(portNumber, nil)
