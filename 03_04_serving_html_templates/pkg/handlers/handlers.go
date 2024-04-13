@@ -2,11 +2,12 @@ package handlers
 
 import (
 	"go_go/03_04_serving_html_templates/pkg/config"
+	"go_go/03_04_serving_html_templates/pkg/models"
 	"go_go/03_04_serving_html_templates/pkg/render"
 	"net/http"
 )
 
-// Repo is the repository used by the handlers
+// Repo the repository used by the handlers
 var Repo *Repository
 
 // Repository is the repository type
@@ -28,10 +29,17 @@ func NewHandlers(r *Repository) {
 
 // Home is the handler for the home page
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, "home.page.tmpl")
+	render.RenderTemplate(w, "home.page.tmpl", &models.TemplateData{})
 }
 
 // About is the handler for the about page
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, "about.page.tmpl")
+	// perform some logic
+	stringMap := make(map[string]string)
+	stringMap["test"] = "Hello, again!!!"
+
+	// send data to the template
+	render.RenderTemplate(w, "about.page.tmpl", &models.TemplateData{
+		StringMap: stringMap,
+	})
 }
